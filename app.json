@@ -1,0 +1,18 @@
+{
+  "name": "TourOfHeroes",
+  "description": "My First angular Application",
+  "scripts": {
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
