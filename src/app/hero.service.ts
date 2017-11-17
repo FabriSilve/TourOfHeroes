@@ -88,4 +88,15 @@ export class HeroService {
         catchError(this.handleError<Hero>('deleteHero'))
       );
   }
+
+  searchHeroes( term : string) : Observable<Hero[]> {
+    if(!term.trim()) {
+      return of([]);
+    }
+    return this.http.get<Hero[]>(`api/heroes/?name=${term}`)
+      .pipe(
+        tap(_=>this.log(`found hero matching "${term}`)),
+        catchError(this.handleError<Hero[]>('searchHero', []))
+      );
+  }
 }
